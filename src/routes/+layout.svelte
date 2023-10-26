@@ -1,3 +1,9 @@
+<script>
+    import '../styles/global.css'
+    import '../styles/layout.css';
+    import CustomizableTextBox from '../common/components/CustomizableTextBox/CustomizableTextBox.svelte';
+</script>
+
 <div class="app-container" >
     <nav class="header-nav flex-row">
         <div class="flex-row">
@@ -5,7 +11,7 @@
             <p>KIT.SVELTE.DEV</p>
         </div>
         <div class="flex-row">
-            <p>searchbar</p>
+            <CustomizableTextBox variant="outlined"/>
         </div>
         <div class="flex-row">
             <p>Docs</p>
@@ -20,8 +26,3 @@
         <slot />
     </div>
 </div>
-
-<script>
-    import '../styles/global.css'
-    import '../styles/layout.css';
-</script>
