@@ -1,0 +1,31 @@
+.textbox-container {
+
+}
+
+.text-box--outlined {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.text-box--underlined {
+    border-bottom: 1px solid gray;
+    border-radius: 5px;
+}
+
+.textbox--unset {
+    all: unset;
+}
+
+.text-box-container__inner {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    padding: 10px 5px;
+}
+
+.text-box__label {
+    font-size: 0.7rem;
+}
+
+.textbox__input-field-styling {
+    width: max-content;
+}

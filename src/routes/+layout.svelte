@@ -11,7 +11,7 @@
             <p>KIT.SVELTE.DEV</p>
         </div>
         <div class="flex-row">
-            <CustomizableTextBox variant="outlined"/>
+            <CustomizableTextBox variant="outlined" />
         </div>
         <div class="flex-row">
             <p>Docs</p>
