@@ -32,3 +32,39 @@
 .nav__links {
     justify-content: end;
 }
+
+.nav__image {
+    cursor: pointer;
+}
+
+.nav__image--spin-clock {
+    animation-name: spin-clock;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+.nav__image--spin-anticlock {
+    animation-name: spin-anticlock;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes spin-clock {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-anticlock {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
