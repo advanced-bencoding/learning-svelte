@@ -1,8 +1,8 @@
 <script>
 
-  import CustomizableTextBox from "../../common/components/CustomizableTextBox/CustomizableTextBox.svelte";
+  import CustomizableTextBox from "../../../common/components/CustomizableTextBox/CustomizableTextBox.svelte";
   import "./navbar.css";
-  import { drawerOpen } from "../../stores/appStore";
+  import { drawerOpen } from "../../../stores/appStore";
 
   let wasDrawerVisible = false;
 
