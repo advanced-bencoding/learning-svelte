@@ -25,8 +25,8 @@
         <span class="text-box__label">{label}</span>
     {/if}
     <div class="text-box-container__inner {cssClassForVariant(variant)}">
-        <slot title="startAdornment" />
+        <slot name="startAdornment" />
         <input class="textbox--unset textbox__input-field-styling " {placeholder} />
-        <slot title="endAdornment" />
+        <slot name="endAdornment" />
     </div>
 </div>
