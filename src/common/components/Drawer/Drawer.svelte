@@ -20,7 +20,7 @@
     >
         {#each drawerConfig as drawerItem (drawerItem.id)}
             <button class="drawer__item">
-                {drawerItem.label}
+                <a href={drawerItem.navLink}>{drawerItem.label}</a>
             </button>
         {/each}
     </div>
