@@ -20,5 +20,10 @@ export const drawerConfig: IDrawerConfig[] = [
         id: "item-4",
         label: "Gallery",
         navLink: "/gallery",
+    },
+    {
+        id: "item-5",
+        label: "Pokemon",
+        navLink: "/pokemon",
     }
 ]

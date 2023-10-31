@@ -7,10 +7,6 @@
 
     export let drawerConfig: IDrawerConfig[];
 
-    function drawerItemClicked(id: string): void{
-
-    }
-
 </script>
 
 {#if $drawerOpen}
