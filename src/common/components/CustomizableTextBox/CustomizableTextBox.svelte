@@ -5,8 +5,6 @@
     export let variant: TextBoxVariant;
     export let label: string | undefined = undefined;
     export let placeholder: string = "";
-    export let textBoxStyle = undefined;
-    export let textBoxType = "text";
 
     const cssClassForVariant = (variant: TextBoxVariant): string => {
         switch(variant){

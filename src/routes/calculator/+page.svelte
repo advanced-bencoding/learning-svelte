@@ -6,44 +6,30 @@
 
 </script>
 
-<div class="page-container">
-    <div class="calculator">
-        <!-- <div class="calculator__display"> -->
-        <input class="calculator__display" bind:value={displayText} />
-        <!-- </div> -->
-        <div class="calculator__controls">
-            {#each controls as control}
-                <CalculatorButton displayVal={control} onClick={() => { displayText += control }} />
-            {/each}
-            <CalculatorButton displayVal={"="} onClick={() => { displayText = eval(displayText) }} width="3" />
-        </div>
+<div class="calculator">
+    <!-- <div class="calculator__display"> -->
+    <input class="calculator__display" bind:value={displayText} />
+    <!-- </div> -->
+    <div class="calculator__controls">
+        {#each controls as control}
+            <CalculatorButton displayVal={control} onClick={() => { displayText += control }} />
+        {/each}
+        <CalculatorButton displayVal={"="} onClick={() => { displayText = eval(displayText) }} width="3" />
     </div>
 </div>
 
 <style>
-    .page-container {
-        display:  flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-    }
 
     .calculator {
         border: 1px solid;
         border-radius: 10px;
         width: 400px;
+        height: fit-content;
         padding: 20px 0px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
-    /* .calculator__display {
-        border: 1px solid;
-        height: auto;
-        width: 300px;
-    } */
 
     .calculator__display {
         width: 80%;
