@@ -1,6 +1,6 @@
 <script lang="ts">
     import { IconPlus } from '@tabler/icons-svelte';
-  import IconButton from '../../../common/components/IconButton/IconButton.svelte';
+    import IconButton from '../../../common/components/IconButton/IconButton.svelte';
 </script>
 
 <div class="todo-container">
@@ -20,14 +20,20 @@
     .todo-container {
         background-color: white;
         border-radius: 10px;
-        width: 600px;
-        height: 800px;
+        width: 500px;
+        height: 700px;
         box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-        display: grid;
-        grid-template-rows: 100px auto;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 30px;
     }
 
-    .todo_header {
+    .todo__header {
+        display: flex;
+        justify-content: flex-end;
+    }
 
+    .todo__items {
+        height: auto;
     }
 </style>
