@@ -1,4 +1,8 @@
-<button class="icon-button">
+<script lang="ts">
+    export let onClick: (...args: any[]) => void;
+</script>
+
+<button class="icon-button" on:click={onClick}>
     <slot name="icon" />
 </button>
 

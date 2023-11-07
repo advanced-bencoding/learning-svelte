@@ -5,14 +5,13 @@
 
 <div class="todo-container">
     <div class="todo__header">
-        <IconButton>
+        <IconButton onClick={() => { console.log("add") }}>
             <div slot="icon">
                 <IconPlus />
             </div>
         </IconButton>
     </div>
     <div class="todo__items">
-        <iconify-icon icon=""></iconify-icon>
     </div>
 </div>
 
