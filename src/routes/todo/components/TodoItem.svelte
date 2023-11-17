@@ -1,16 +1,17 @@
 <script lang="ts">
     import { IconX, IconCheck, IconPencil, IconTrash } from '@tabler/icons-svelte';
     import IconButton from '../../../common/components/IconButton/IconButton.svelte';
+  import type { Todo } from '../todoStore';
 
-    export let title: string;
-    export let date: string;
     export let createMode: boolean;
     export let editMode: boolean;
+    export let date: string;
+    export let title: string;
     export let isComplete: boolean;
-    export let onEditConfirm: (idx: number) => void;
-    export let onEditCancel: (idx: number) => void;
-    export let onEditClick: (idx: number) => void;
-    export let onDeleteClick: (idx: number) => void;
+    export let onEditConfirm: (event: Event) => void;
+    export let onEditCancel: (event: Event) => void;
+    export let onEditClick: (event: Event) => void;
+    export let onDeleteClick: (event: Event) => void;
 </script>
 
 <div class="todo-item">
@@ -31,17 +32,25 @@
     <div class="todo-item__actions">
         {#if createMode || editMode}
             <IconButton onClick={onEditConfirm}>
-                <IconCheck />
+                <div slot="icon">
+                    <IconCheck />
+                </div>
             </IconButton>
             <IconButton onClick={onEditCancel}>
-                <IconX />
+                <div slot="icon">
+                    <IconX />
+                </div>
             </IconButton>
         {:else}
             <IconButton onClick={onEditClick}>
-                <IconPencil />
+                <div slot="icon">
+                    <IconPencil />
+                </div>
             </IconButton>
             <IconButton onClick={onDeleteClick}>
-                <IconTrash />
+                <div slot="icon">
+                    <IconTrash />
+                </div>
             </IconButton>
         {/if}
     </div>
@@ -49,17 +58,19 @@
 
 <style>
     .todo-item {
-        height: 200px;
+        height: auto;
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 4fr 2fr;
+        align-items: center;
     }
 
     .todo-item__body {
-
+        display: flex;
+        align-items: center;
     }
 
     .todo-item__actions {
-
+        display: flex;
     }
 </style>

@@ -1,17 +1,64 @@
 <script lang="ts">
     import { IconPlus } from '@tabler/icons-svelte';
     import IconButton from '../../../common/components/IconButton/IconButton.svelte';
+    import { todos } from '../todoStore';
+    import TodoItem from './TodoItem.svelte';
+
+    function getTodaysDate(): string{
+        const date = new Date();
+        return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+    }
+    let editCache = {
+        title: "",
+        date: "",
+    };
 </script>
 
 <div class="todo-container">
     <div class="todo__header">
-        <IconButton onClick={() => { console.log("add") }}>
+        <IconButton onClick={() => {
+            todos.addTodo({
+                createMode: true,
+                date: getTodaysDate(),
+                editMode: false,
+                isComplete: false,
+                title: "",
+            });
+        }}>
             <div slot="icon">
                 <IconPlus />
             </div>
         </IconButton>
     </div>
     <div class="todo__items">
+        {#each $todos as todo, index}
+            <TodoItem
+                bind:createMode={todo.createMode}
+                bind:editMode={todo.editMode}
+                bind:title={todo.title}
+                bind:date={todo.date}
+                bind:isComplete={todo.isComplete}
+                onEditConfirm={(e) => todos.editConfirm(index)}
+                onEditCancel={(e) => { 
+                    if(todo.createMode){
+                        todos.removeTodo(index)
+                    }
+                    else if(todo.editMode){
+                        $todos[index].title = editCache.title;
+                        $todos[index].date = editCache.date;
+                        $todos[index].editMode = false;
+                    }
+                }}
+                onEditClick={(e) => {
+                    if(todos.canEnterEdit()){
+                        editCache.title = $todos[index].title;
+                        editCache.date = $todos[index].date;
+                        $todos[index].editMode = true;
+                    }
+                }}
+                onDeleteClick={(e) => { todos.removeTodo(index) }}
+            />
+        {/each}
     </div>
 </div>
 
