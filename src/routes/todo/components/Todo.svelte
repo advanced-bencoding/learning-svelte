@@ -17,13 +17,15 @@
 <div class="todo-container">
     <div class="todo__header">
         <IconButton onClick={() => {
-            todos.addTodo({
-                createMode: true,
-                date: getTodaysDate(),
-                editMode: false,
-                isComplete: false,
-                title: "",
-            });
+            if(todos.canEnterEdit()){
+                todos.addTodo({
+                    createMode: true,
+                    date: getTodaysDate(),
+                    editMode: false,
+                    isComplete: false,
+                    title: "",
+                });
+            }
         }}>
             <div slot="icon">
                 <IconPlus />

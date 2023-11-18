@@ -12,16 +12,6 @@ export const drawerConfig: IDrawerConfig[] = [
         navLink: "/todo",
     },
     {
-        id: "item-3",
-        label: "Signup Form",
-        navLink: "/signup",
-    },
-    {
-        id: "item-4",
-        label: "Gallery",
-        navLink: "/gallery",
-    },
-    {
         id: "item-5",
         label: "Pokemon",
         navLink: "/pokemon",
