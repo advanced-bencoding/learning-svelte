@@ -7,6 +7,11 @@
     };
     console.log("ran");
 
+    // game plan
+    // choose random pokemon from balls displayed on homescreen
+    // enter a fight with a random pokemon
+    // have simple attakcs in turn based combat
+
 </script>
 
 {#await apiCall()}
