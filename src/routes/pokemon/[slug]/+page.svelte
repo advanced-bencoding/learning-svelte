@@ -1,7 +1,7 @@
 <script lang="ts">
-    export let pokemon: any;
+    export let data: any;
 </script>
 
 <h1>
-    {pokemon.name}
+    slug loaded
 </h1>

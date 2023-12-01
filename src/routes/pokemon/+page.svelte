@@ -6,7 +6,6 @@
   const result = await axios.get('https://pokeapi.co/api/v2/pokemon');
   return result.data.results;
  };
- console.log('ran');
  // game plan
  // choose random pokemon from balls displayed on homescreen
  // enter a fight with a random pokemon
