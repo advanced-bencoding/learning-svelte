@@ -44,10 +44,6 @@
         justify-content: center;
     }
 
-    .card__info {
-
-    }
-
     .card__info__ability {
         display: flex;
         flex-direction: row;
